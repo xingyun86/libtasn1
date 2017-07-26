@@ -21,7 +21,8 @@
 
 #include "timespec.h"
 
-#include <sys/time.h>
+//#include <sys/time.h>
+#include <winsock2.h>
 #include <time.h>
 
 /* Get the system time into *TS.  */

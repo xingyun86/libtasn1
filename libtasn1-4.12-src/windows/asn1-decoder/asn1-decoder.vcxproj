@@ -11,16 +11,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{0C4318E2-FFD7-40DC-945C-40016B10665C}</ProjectGuid>
-    <RootNamespace>gnulib</RootNamespace>
+    <ProjectGuid>{7B7B0E3C-DA1B-4E48-99D1-20C6A61E75B0}</ProjectGuid>
+    <RootNamespace>asn1-decoder</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <PlatformToolset>v140_xp</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <PlatformToolset>v140_xp</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -41,41 +41,37 @@
     <IntDir>$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
     <IntDir>$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.;..\..\;..\..\gl;..\..\lib;..\..\lib\gllib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./src;./libtasn1-4.1.2/include;./libtasn1-4.1.2/include/gl;./libtasn1-4.1.2/include/lib;./libtasn1-4.1.2/include/lib/gllib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <PreprocessorDefinitions>_USING_V110_SDK71_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_USING_V110_SDK71_;ASN1_STATIC;STATIC_GETOPT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>./libtasn1-4.1.2/lib/$(Configuration);</AdditionalLibraryDirectories>
+      <AdditionalDependencies>gnulib.lib;libtasn1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.;..\..\;..\..\gl;..\..\lib;..\..\lib\gllib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./src;./libtasn1-4.1.2/include;./libtasn1-4.1.2/include/gl;./libtasn1-4.1.2/include/lib;./libtasn1-4.1.2/include/lib/gllib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <PreprocessorDefinitions>_USING_V110_SDK71_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_USING_V110_SDK71_;ASN1_STATIC;STATIC_GETOPT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>./libtasn1-4.1.2/lib/$(Configuration);</AdditionalLibraryDirectories>
+      <AdditionalDependencies>gnulib.lib;libtasn1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\gl\fstat.c" />
-    <ClCompile Include="..\..\gl\ftell.c" />
-    <ClCompile Include="..\..\gl\ftello.c" />
-    <ClCompile Include="..\..\gl\getopt.c" />
-    <ClCompile Include="..\..\gl\gettime.c" />
-    <ClCompile Include="..\..\gl\gettimeofday.c" />
-    <ClCompile Include="..\..\gl\malloc.c" />
-    <ClCompile Include="..\..\gl\msvc-inval.c" />
-    <ClCompile Include="..\..\gl\msvc-nothrow.c" />
-    <ClCompile Include="..\..\gl\progname.c" />
-    <ClCompile Include="..\..\gl\read-file.c" />
-    <ClCompile Include="..\..\gl\realloc.c" />
-    <ClCompile Include="..\..\gl\timespec.c" />
-    <ClCompile Include="..\..\gl\unistd.c" />
-    <ClCompile Include="..\..\gl\version-etc-fsf.c" />
-    <ClCompile Include="..\..\gl\version-etc.c" />
-    <ClCompile Include="..\..\lib\gllib\hash-pjw-bare.c" />
-    <ClCompile Include="..\..\lib\gllib\strverscmp.c" />
+    <ClInclude Include="config.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\asn1Decoding.c" />
+    <ClCompile Include="src\benchmark.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

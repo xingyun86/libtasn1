@@ -20,7 +20,8 @@
 #include <config.h>
 
 /* Specification.  */
-#include <sys/time.h>
+//#include <sys/time.h>
+#include <winsock2.h>
 
 #if HAVE_SYS_TIMEB_H
 # include <sys/timeb.h>
@@ -97,7 +98,7 @@ rpl_tzset (void)
    causes problems.  */
 
 int
-gettimeofday (struct timeval * restrict tv, void *restrict tz)
+gettimeofday (struct timeval * /*restrict*/ tv, void */*restrict*/ tz)
 {
 #undef gettimeofday
 #if HAVE_GETTIMEOFDAY

@@ -25,6 +25,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "asn1-parser", "asn1-parser\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gnulib", "gnulib\gnulib.vcxproj", "{0C4318E2-FFD7-40DC-945C-40016B10665C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "asn1-decoder", "asn1-decoder\asn1-decoder.vcxproj", "{7B7B0E3C-DA1B-4E48-99D1-20C6A61E75B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -51,6 +53,10 @@ Global
 		{0C4318E2-FFD7-40DC-945C-40016B10665C}.Debug|Win32.Build.0 = Debug|Win32
 		{0C4318E2-FFD7-40DC-945C-40016B10665C}.Release|Win32.ActiveCfg = Release|Win32
 		{0C4318E2-FFD7-40DC-945C-40016B10665C}.Release|Win32.Build.0 = Release|Win32
+		{7B7B0E3C-DA1B-4E48-99D1-20C6A61E75B0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7B7B0E3C-DA1B-4E48-99D1-20C6A61E75B0}.Debug|Win32.Build.0 = Debug|Win32
+		{7B7B0E3C-DA1B-4E48-99D1-20C6A61E75B0}.Release|Win32.ActiveCfg = Release|Win32
+		{7B7B0E3C-DA1B-4E48-99D1-20C6A61E75B0}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

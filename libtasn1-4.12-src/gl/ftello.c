@@ -21,6 +21,7 @@
 
 /* Get lseek.  */
 //#include <unistd.h>
+#include <sys/types.h>
 
 #include "stdio-impl.h"
 

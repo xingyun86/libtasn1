@@ -21,6 +21,7 @@
 
 #include <errno.h>
 #include <limits.h>
+#include <sys/types.h>
 
 long
 ftell (FILE *fp)
