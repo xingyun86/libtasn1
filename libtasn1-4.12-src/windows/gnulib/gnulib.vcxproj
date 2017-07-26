@@ -59,7 +59,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\gl\fstat.c" />
-    <ClCompile Include="..\..\gl\ftell.c" />
     <ClCompile Include="..\..\gl\ftello.c" />
     <ClCompile Include="..\..\gl\getopt.c" />
     <ClCompile Include="..\..\gl\gettime.c" />
